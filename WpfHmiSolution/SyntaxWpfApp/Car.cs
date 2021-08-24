@@ -1,10 +1,14 @@
 ﻿using System.Windows.Media;
 
-namespace BusinessLogic
+namespace BusinessLogic 
 {
-    public class Car
+    public class Car : Notifier
     {
-        public double Speed { get; set; }
+        private double speed;
+        public double Speed {
+            get { return speed; }
+            set { OnPropertyChanged("Speed"); }
+            }
         public Color Color { get; set; }
         public Human Driver { get; set; }
     }
