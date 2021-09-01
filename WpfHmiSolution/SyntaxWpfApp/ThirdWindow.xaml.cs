@@ -27,19 +27,20 @@ namespace SyntaxWpfApp
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //txt.Text = "Meeting";
-            //txt.FontSize = 10 ;
-            //txt.Foreground = new SolidColorBrush(Colors.Black);
-            
+            //TxtTest.Text = "Meeting!";
+            //TxtTest.FontSize = 10;
+            //TxtTest.Foreground = new SolidColorBrush(Color.FromRgb(0,0,255));
+
             // Car
             Car c = new Car();
-            c.Speed = 300;
+            c.Speed = 200;
             c.Color = Colors.White;
             c.Driver = null;
 
-            this.DataContext = c;
-            //txt.Text = c.Speed.ToString();
+            TxtTest.DataContext = c;
+            // TxtTest.Text = c.Speed.ToString();
+            StpCar.DataContext = c;
         }
-        
+
     }
 }

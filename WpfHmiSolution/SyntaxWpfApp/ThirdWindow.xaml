@@ -11,60 +11,51 @@
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <TextBox x:Name="txt" Text ="{Binding Speed, Converter={StaticResource tConverter}}" Foreground="Red" FontFamily="namugodic" FontSize="30"  />
+        <TextBox x:Name="TxtTest" Text="{Binding Speed, Converter={StaticResource tConverter}}" Foreground="Red" FontSize="30" FontFamily="NanumGothic" />
 
         <ComboBox Grid.Row="0" Grid.Column="1" Height="35">
-            <Label Content="Element1"/>
-            <Label Content="Element2"/>
+            <Label Content="Element1" />
+            <Label Content="Element2" />
             <GroupBox Header="Group1">
                 With Some content...
             </GroupBox>
-            <Label Content="Element3"/>
-            <Label Content="Element4"/>
-            <Label Content="Element5"/>
-            <Label Content="Element6"/>
+            <Label Content="Element3" />
+            <Label Content="Element4" />
+            <Label Content="Element5" />
+            <Label Content="Element6" />
+            <Label Content="Element7" />
+            <Label Content="Element8" />
         </ComboBox>
 
-        <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical" Width="200" Height="100" Margin="32,5,32,100">
-            <CheckBox Grid.Row="1" Content="Samsung" />
-            <CheckBox Grid.Row="1" Content="Hyundai" />
-            <CheckBox Grid.Row="1" Content="Daewoo" />
-            <CheckBox Grid.Row="1" Content="LG" />
+        <StackPanel x:Name="StpCar" Grid.Row="0" Grid.Column="2">
+            <TextBlock Text="{Binding Color}" />
+            <Label Content="{Binding Driver}" />
+            <TextBox Text="{Binding Speed}" />
         </StackPanel>
 
-        <ListBox Grid.Row="0" Grid.Column="2" >
-            <Label Content="Element1"/>
-            <Label Content="Element2"/>
-            <GroupBox Header="Group1">
-                With Some content...
-            </GroupBox>
-            <Label Content="Element3"/>
-            <Label Content="Element4"/>
-            <Label Content="Element5"/>
-            <Label Content="Element6"/>
-        </ListBox>
-        <!--<Button x:Name="BtnClick" Content="Click" Grid.Row="2" Grid.Column="2"/>-->
-        <StackPanel Grid.Row="2" Grid.Column="1">
-            <Slider x:Name="slider" Maximum="100" Minimum="0" Value="10"/>
-            <ProgressBar Height="20" Value="{Binding Value, ElementName=slider}"/>
-            <TextBlock Text="{Binding Value, ElementName=slider, StringFormat={}{0:0.0}}" TextAlignment="Center"/>
+        <StackPanel Grid.Row="1" Orientation="Vertical" Width="200" Height="100" Margin="10,10,55,100" Background="AliceBlue" >
+            <CheckBox Content="Samsung" />
+            <CheckBox Content="LG" />
+            <CheckBox Content="Daewoo" />
+            <CheckBox Content="Winia" />
         </StackPanel>
 
-        <StackPanel x:Name="StpCar" Grid.Row="2" Grid.Column="2">
-            <TextBlock Text="{Binding Color}"/>
-            <Label Content="{Binding Driver}"/>
-            <TextBlock Text="{Binding Speed}"/>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <Slider x:Name="slider" Maximum="100" Minimum="0" Value="10" />
+            <ProgressBar Height="20" Value="{Binding Value, ElementName=slider}" />
+            <TextBlock Text="{Binding Value, ElementName=slider, StringFormat={}{0:0.0}}" TextAlignment="Center" />
         </StackPanel>
+        <Button Content="Button" Grid.Column="2" HorizontalAlignment="Left" Margin="79,68,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"  Height="22" />
 
-
+        <!--<Button x:Name="BtnClick" Content="Click" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" />-->
     </Grid>
 </Window>

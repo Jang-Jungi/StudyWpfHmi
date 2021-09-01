@@ -19,6 +19,7 @@ namespace SyntaxWpfApp
             win.Show();
         }
 
+
         private void BtnFourth_Click(object sender, RoutedEventArgs e)
         {
             FourthWindow win = new FourthWindow();

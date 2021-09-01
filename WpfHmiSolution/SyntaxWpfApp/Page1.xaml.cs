@@ -24,6 +24,7 @@ namespace SyntaxWpfApp
         public Page1()
         {
             InitializeComponent();
+
             InitCar();
         }
 
@@ -31,16 +32,21 @@ namespace SyntaxWpfApp
         {
             var human = new Human();
             human.FirstName = "Lallies";
-            human.HasLicense = true;
+            human.HasLicense = false;
 
             Car car = new Car();
             car.Color = Colors.Red;
             car.Speed = 320.0;
+            car.Driver = human;
+
+            //car2.Color;
+
+            //LblCarSpeed.Content = car.Speed;
         }
 
         private void BtnGo_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("Page2.xaml", UriKind.RelativeOrAbsolute));
+            NavigationService.Navigate(new Uri("/Page2.xaml", UriKind.RelativeOrAbsolute));
         }
     }
 }

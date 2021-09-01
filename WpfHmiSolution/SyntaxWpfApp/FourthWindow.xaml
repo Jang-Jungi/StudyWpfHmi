@@ -5,40 +5,47 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SyntaxWpfApp"
         mc:Ignorable="d"
-        Title="FourthWindow" Height="450" Width="800" >
-    <Canvas>
+        Title="FourthWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Button x:Key="sharedButton" Content="Yours!" Height="30" />
+        <SolidColorBrush x:Key="accentBrush" Color="Crimson" />
+    </Window.Resources>
 
-        <ListBox Width="300" Height="150" ItemsSource="{Binding}">
+    <Canvas>
+        <ListBox Width="150" Height="250" ItemsSource="{Binding}">
             <ListBox.ItemTemplate>
-                <ItemContainerTemplate>
-                    <StackPanel>
-                        <TextBlock Text="Speed" />
-                        <TextBox Text="{Binding Speed}" />
-                        <Slider Value="{Binding Speed}" Maximum="100" />
-                        <TextBlock Text="Color" />
-                        <Border Height="10">
-                            <Border.Background>
-                                <SolidColorBrush Color="{Binding Color}" />
-                            </Border.Background>
-                        </Border>
-                        <TextBox Text="{Binding Color}" />
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Speed}" />
+                        <Label Content="{Binding Color}" />
                     </StackPanel>
-                </ItemContainerTemplate>
+                </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <Button Content="Press me" Canvas.Left="357" Canvas.Top="186" Click="Button_Click_1">
+        <Button Width="200" Height="95" Canvas.Left="221" Canvas.Top="132" Content="Play Me" Click="Button_Click" Background="Green" Foreground="White" RenderTransformOrigin="0.5,0.5">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Grid>
                         <Ellipse Fill="{TemplateBinding Background}" />
-                        <Label Content="{TemplateBinding Content}"
-                       HorizontalAlignment="Right"
-                       VerticalAlignment="Bottom" />
+                        <Label Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{TemplateBinding Foreground}" />
                     </Grid>
                 </ControlTemplate>
             </Button.Template>
         </Button>
 
+        <Button Width="200" Height="100" Canvas.Left="518" Canvas.Top="33">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Ellipse Fill="{TemplateBinding Background}" />
+                        <Label Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{TemplateBinding Foreground}" />
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Label Canvas.Left="400" Canvas.Top="300" Width="100" Height="50" Content="{StaticResource sharedButton}" />
+        <Rectangle Canvas.Left="500" Width="50" Height="50" Canvas.Top="271" Fill="{StaticResource accentBrush}" />
     </Canvas>
 </Window>
